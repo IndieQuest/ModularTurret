@@ -80,7 +80,7 @@ func _rotate(delta: float) -> void:
 func _elevate(delta: float) -> void:
 	# get displacment
 	var x_target = _get_global_x()
-	var x_diff = x_target - head.transform.basis.get_euler().x
+	var x_diff = x_target - head.global_transform.basis.get_euler().x
 	var final_x = sign(x_diff) * min(elevation_speed * delta, abs(x_diff))
 	# elevate head
 	head.rotate_x(final_x)
